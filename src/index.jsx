@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-// import { configureStore, combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
 
-import './styles/index.css';
-import App from './components/App';
+import './styles/application.css';
+import App from './components/app';
 
-// import reducer from './reducers/'
+import citiesReducer from './reducers/cities_reducer.js'
+import activeCityReducer from './reducers/active_city_reducer.js'
 
-// const reducers = combineReducers({
-//   // state: reducer
-// })
+const reducers = combineReducers({
+  cities: citiesReducer,
+  activeCity: activeCityReducer
+})
 
-ReactDOM.render(
-  <Provider >
-  {/* <Provider store={configureStore(reducers)} > */}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={createStore(reducers)}>
     <App />
-  </Provider>,
-  document.getElementById('root')
-)
+  </Provider>
+);

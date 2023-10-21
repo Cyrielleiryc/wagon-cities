@@ -1,0 +1,43 @@
+body {
+  color: white !important;
+  background-color: black;
+}
+
+.app {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.cities {
+  width: 30%;
+}
+
+.list-group-item {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  border-color: white;
+}
+
+.list-group-item.active {
+  background-color: white;
+  color: black;
+  border-color: red;
+}
+
+.active-city {
+  width: 70%;
+  margin: 20px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.active-city h3 {
+  margin-top: 0;
+}
+
+.active-city img {
+  width: 100%;
+}
